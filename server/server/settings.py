@@ -45,10 +45,24 @@ INSTALLED_APPS = (
     'ClusterManager'
 )
 
+<<<<<<< HEAD
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+=======
+'''
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+  }
+'''
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+#   'django.middleware.csrf.CsrfViewMiddleware',
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -82,14 +96,29 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
     'ENGINE': 'django.db.backends.mysql',
     'USER':'root',
 	'PASSWORD':'',
 	'NAME':'mysql',
+=======
+        'ENGINE': 'django.db.backends.mysql',
+        'USER':'root',
+	'PASSWORD':'root',
+	'NAME':'bigdata',
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
 	'HOST':'localhost'
     }
 }
 
+<<<<<<< HEAD
+=======
+'''REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': (
+       'rest_framework.parsers.JSONParser',
+    )
+} '''
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

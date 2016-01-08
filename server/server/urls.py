@@ -13,11 +13,22 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+<<<<<<< HEAD
 from django.conf.urls import include, url
 from django.contrib import admin
 #user_views
 from users.views_user_operation import *
 from users.views import *
+=======
+from django.conf.urls import include, url, patterns
+from django.contrib import admin
+admin.autodiscover()
+#user_views
+
+from users.views import *
+from django.conf.urls import patterns, url
+from users import views
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
 #TrafficMonitor_views
 from TrafficMonitor.views_dushboard_resources import *
 from TrafficMonitor.views_resource_list import *
@@ -40,6 +51,7 @@ urlpatterns = [
 
 #Useroperation
 urlpatterns += [
+<<<<<<< HEAD
     url(r'^users/$', User_list.as_view()),
     #user_operation
     url(r'^OperatorLogin/$', OperatorLogin.as_view()),
@@ -51,6 +63,12 @@ urlpatterns += [
     url(r'^ResearcherLogin/', ResearcherLogin.as_view()),
     url(r'^ResearcherChgPsw/', ResearcherChgPsw.as_view()),
     url(r'^ResearcherReg/', ResearcherReg.as_view()),
+=======
+
+    url(r'^login/$', login.as_view()),
+    url(r'^regist/$', regist.as_view()),
+
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
 ]
 
 #TrafficMonitor

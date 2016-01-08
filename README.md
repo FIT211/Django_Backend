@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Django_Backend
 bigdata platform's backend based django rest_framework
 =======
@@ -51,3 +52,7 @@ Note：
     具体可以可以参考users.views_user_operation.OperatorLogin中的实现方法。
     
 >>>>>>> Update README.md
+=======
+# Django_Backend
+bigdata platform's backend based django rest_framework
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe

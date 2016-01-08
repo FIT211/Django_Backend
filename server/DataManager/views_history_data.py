@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+<<<<<<< HEAD
 from pydoop.hdfs import hdfs
 import json
 import string
@@ -100,6 +101,16 @@ class OfflineApplicationLayerResults(APIView):
         return HttpResponse(D, content_type="application/json")
 
 
+=======
+
+# Create your views here.
+class OfflineApplicationLayerResults(APIView):
+    def get(self, request, format=None):
+        #
+        #include method here
+        #
+        return Response({'Response':'OfflineApplicationLayerResults'})
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
 
 class OfflineTransportLayerResults(APIView):
     def get(self, request, format=None):
@@ -113,5 +124,9 @@ class OfflineNetworkLayerResults(APIView):
         #
         #include method here
         #
+<<<<<<< HEAD
         return Response({'Response':'OfflineNetworkLayerResults'})
 
+=======
+        return Response({'Response':'OfflineNetworkLayerResults'})
+>>>>>>> df42a9685f2820b7f7c8abab8a52fe9c1e590fbe
