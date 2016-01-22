@@ -1,3 +1,4 @@
+
 #coding=utf-8
 from django.shortcuts import render, render_to_response
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseRedirect
@@ -7,6 +8,7 @@ from users.models import Administrator
 from users.models import Researcher
 from django import forms
 from django.contrib.auth.models import User
+
 from users.serializers import UserSerializer
 from rest_framework.renderers import JSONRenderer
 from rest_framework.views import APIView
@@ -279,3 +281,4 @@ class login(APIView):
                                          D = '%s(%s)'%(callback, json.dumps(data))
                                          print("wrong password!")
                                          return HttpResponse(D, content_type="application/json")
+

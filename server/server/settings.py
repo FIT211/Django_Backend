@@ -45,6 +45,14 @@ INSTALLED_APPS = (
     'ClusterManager'
 )
 
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+
+)
+
 '''
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
@@ -96,6 +104,7 @@ DATABASES = {
 	'HOST':'localhost'
     }
 }
+
 
 '''REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': (

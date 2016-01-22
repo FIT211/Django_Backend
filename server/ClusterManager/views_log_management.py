@@ -1,4 +1,4 @@
-from rest_framework.views import APIView
+'''from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import HttpResponse
 import json
@@ -34,3 +34,60 @@ class LogManagement(APIView):
 			c = f.read()
 	return HttpResponse(json.dumps(c), content_type="application/json")
 	return Response(c)
+'''
+from rest_framework.views import APIView
+
+from rest_framework.response import Response
+
+from django.http import HttpResponse
+
+import json
+
+import httplib
+
+import paramiko   
+
+# Create your views here.
+
+class LogManagement(APIView):
+
+    def get(self, request, format=None):
+
+        #
+
+        #include method here
+
+	#
+
+	c = {}	
+	callback = request.GET.get('callback', 'logIt')
+
+
+	t = paramiko.Transport(("2001:da8:a0:500::1:7",22))
+
+#	t = paramiko.Transport(("166.111.143.200",22))	
+
+	t.connect(username="pangu", password ="thiSiSnoTsecurE")
+
+#	t.connect(username = "root", password = "tsinghuamcloud")
+
+	sftp = paramiko.SFTPClient.from_transport(t)
+
+	localpath='/root/tmp/test.out'
+
+#	remotepath='/root/TsinghuaCloudExt/README.md'
+
+	remotepath='/home/pangu/kafka-logs/zookeeper.out'
+
+	sftp.get(remotepath, localpath)
+
+	t.close()
+
+	with open('/root/tmp/test.out') as f:
+
+		c = f.read()
+	
+	D = '%s(%s)'%(callback, json.dumps(c))
+	return HttpResponse(D, content_type="application/json")
+
+#	return Response(c)

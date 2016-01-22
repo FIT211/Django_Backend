@@ -13,14 +13,15 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 admin.autodiscover()
 #user_views
-
 from users.views import *
-from django.conf.urls import patterns, url
 from users import views
+
+
 #TrafficMonitor_views
 from TrafficMonitor.views_dushboard_resources import *
 from TrafficMonitor.views_resource_list import *
@@ -43,7 +44,7 @@ urlpatterns = [
 
 #Useroperation
 urlpatterns += [
-
+  
     url(r'^login/$', login.as_view()),
     url(r'^regist/$', regist.as_view()),
 
@@ -52,6 +53,8 @@ urlpatterns += [
 #TrafficMonitor
 urlpatterns += [
     #dushboard_resources
+    url(r'^RealtimeApplicationThroughput/Second$', RealtimeApplicationThroughput_Second.as_view()),
+    url(r'^RealtimeApplicationThroughput/Minute$', RealtimeApplicationThroughput_Minute.as_view()),
     url(r'^RealtimeApplicationThroughput/$', RealtimeApplicationThroughput.as_view()),
     url(r'^RealtimeApplicationDataPacket/$', RealtimeApplicationDataPacket.as_view()),
     url(r'^RealtimeApplicationStream/$', RealtimeApplicationStream.as_view()),

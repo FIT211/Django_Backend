@@ -112,12 +112,12 @@ class RealtimeApplicationThroughput_Minute(APIView):
 		line3 = r.get('minute')
                 array1 = line1.split('/')
                 array2 = line2.split('/')
-		array2 = line3.split('/')
+		array3 = line3.split('/')
                 for i in range(1,len(array1)):
                         body = {}
                         body['countPacket_minute'] = array1[i]
                         body['throuput_minute'] = array2[i]
-			body['minute'] = array3[i]
+			#body['minute'] = array3[i]
                         data.append(body)
                         #print data
                 D = '%s(%s)'%(callback, json.dumps(data))
